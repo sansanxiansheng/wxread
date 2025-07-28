@@ -68,12 +68,12 @@ def refresh_cookie():
         raise Exception(ERROR_CODE)
 
 refresh_cookie()
-min_seconds = 1 * 60  # 1 m
-max_seconds = 2 * 60  # 2 ms
+min_seconds = 0.1 * 60 * 60  # 0.1 h
+max_seconds = 0.2 * 60 * 60  # 0.2 h
 wait_time_seconds = random.randint(min_seconds, max_seconds)
-print(f"Waiting for a random duration of {wait_time_seconds / 3600:.2f} hours ({wait_time_seconds} seconds)...")
+logging.info(f"Waiting for a random duration of {wait_time_seconds / 3600:.2f} hours ({wait_time_seconds} seconds)...")
 time.sleep(wait_time_seconds)
-print("Finished waiting.")
+logging.info("Finished waiting.")
 
 index = 1
 lastTime = int(time.time()) - 30
