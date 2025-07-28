@@ -9,10 +9,10 @@ import random
 """
 
 # 阅读次数 默认40次/20分钟
-min_seconds = 12 + int(os.getenv('READ_NUM') or 40)
-max_seconds = 36  + int(os.getenv('READ_NUM') or 40)
+min_num = 12 + int(os.getenv('READ_NUM') or 40)
+max_num = 36  + int(os.getenv('READ_NUM') or 40)
 
-READ_NUM = random.randint(min_seconds, max_seconds)
+READ_NUM = random.randint(min_num, max_num)
 # 需要推送时可选，可选pushplus、wxpusher、telegram
 PUSH_METHOD = "" or os.getenv('PUSH_METHOD')
 # pushplus推送时需填
